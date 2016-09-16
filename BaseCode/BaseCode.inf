@@ -17,7 +17,7 @@
 #					其余的类型可以是：
 #						SEC, PEI_CORE, PEIM, DXE_DRIVER, DXE_CORE, DXE_SAL_DRIVER, DXE_SMM_DRIVER, 
 #						DXE_RUNTIME_DRIVER, UEFI_DRIVER, BASE, UEFI_APPLICATION
-#	ENTRY_POINT:    入口函数。 
+#	ENTRY_POINT:    入口函数。 和 *.c 中的需要一致，可以随便命名！
 ##################################################################################################
 [Defines]
   INF_VERSION		=	0x00010005       
