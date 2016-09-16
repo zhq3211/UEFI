@@ -20,7 +20,7 @@
 
 === U盘 Shell 环境运行 ===
 1. 将 *.inf 的路径添加到 MdeModulePkg.dsc 的 [Components] 部分
-2. 编译
+2. 编译(cmd)
 	> Edk2Setup.bat
 	> build -p MdeModulePkg\MdeModulePkg.dsc -a X64
 	> build -p MdeModulePkg\MdeModulePkg.dsc -a X64 -m zhq\BaseCode\BaseCode.inf
