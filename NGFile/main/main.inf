@@ -1,0 +1,25 @@
+﻿
+[Defines]
+  INF_VERSION       = 0x00010005       
+  BASE_NAME         = zhq_main
+  FILE_GUID         = 1987936E-ABCD-44db-AE97-1FA5E4ED2115
+  MODULE_TYPE     = UEFI_APPLICATION
+  VERSION_STRING = 1.0
+  ENTRY_POINT       = ShellCEEntryLib
+  #ENTRY_POINT       = UefiMain
+
+[Sources]
+  main.c
+  
+# StdLib\StdLib.dec
+[Packages]
+  MdePkg\MdePkg.dec
+  ShellPkg\ShellPkg.dec
+ 
+#LibC
+#LibStdio
+#ShellCEntryLib  
+[LibraryClasses]
+  UefiApplicationEntryPoint
+
+  

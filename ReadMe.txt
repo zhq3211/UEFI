@@ -1,12 +1,15 @@
-﻿UEFI 基本原理中，基本代码。
+﻿UEFI 基本原理 & 操作
+	程序编写
+	编译&运行
+	
 
-=== 编写程序 ===
+=== 程序编写 ===
 1. EDK2 source 下编写 *.c 和 *.inf 文件
 	如：
 	D:\UEFI\EDK2-18916\UEFI\BaseCode\BaseCode.c
 	D:\UEFI\EDK2-18916\UEFI\BaseCode\BaseCode.inf
 
-=== 仿真环境运行 ===
+=== 编译&运行*.efi [仿真环境] ===
 1. 将 *.inf 的路径添加到 Nt32Pkg.dsc 的 [Components] 部分
 2. 编译
 	> Edk2Setup.bat
@@ -18,7 +21,7 @@
 	> fs0:
 	> *.efi
 
-=== U盘 Shell 环境运行 ===
+=== 编译&运行*.efi [shell U盘] ===
 1. 将 *.inf 的路径添加到 MdeModulePkg.dsc 的 [Components] 部分
 2. 编译(cmd)
 	> Edk2Setup.bat

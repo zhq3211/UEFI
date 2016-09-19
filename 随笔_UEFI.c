@@ -1,6 +1,7 @@
 ﻿QA：
 1. UEFI 中是否有输入函数？如 scanf
 2. float 的定义头文件？因为直接使用，报错
+3. *.dsc 的[Components]中引用工程目录外的路径，报错
 
 
 
