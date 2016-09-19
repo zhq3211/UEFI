@@ -1,0 +1,17 @@
+[Defines]
+	INF_VERSION		= 0x00010005       
+	BASE_NAME		= MyOutoutString
+	FILE_GUID		= 1158836E-ABCD-44db-AE97-1FA5E4ED2115
+	MODULE_TYPE		= UEFI_APPLICATION
+	VERSION_STRING	= 1.0
+	ENTRY_POINT		= UefiMain
+
+[Sources]
+	OutputString.c
+
+[Packages]
+	MdePkg\MdePkg.dec
+	ShellPkg\ShellPkg.dec
+
+[LibraryClasses]
+	UefiApplicationEntryPoint
