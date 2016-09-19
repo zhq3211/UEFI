@@ -1,0 +1,26 @@
+[Defines]
+	INF_VERSION		= 0x00010005
+	BASE_NAME		= MyEventTest
+	FILE_GUID		= 4C381C6C-D35F-1B11-8175-A5B8A8ADF5EC
+	MODULE_TYPE		= UEFI_APPLICATION
+	VERSION_STRING	= 1.0
+	ENTRY_POINT		= UefiMain
+
+[Sources]
+    EventTest.c
+
+#include packages which have *.h used in this package
+[Packages]
+    MdePkg/MdePkg.dec
+    MdeModulePkg/MdeModulePkg.dec
+
+#include the librarys used in this package
+[LibraryClasses]
+    UefiApplicationEntryPoint
+    UefiLib
+    UefiBootServicesTableLib
+    UefiRuntimeServicesTableLib
+    #UefiRuntimeLib
+
+[Protocols]
+    gEfiSimplePointerProtocolGuid
