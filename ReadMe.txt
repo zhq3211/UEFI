@@ -28,7 +28,11 @@
 	> build -p MdeModulePkg\MdeModulePkg.dsc -a X64
 	> build -p MdeModulePkg\MdeModulePkg.dsc -a X64 -m zhq\BaseCode\BaseCode.inf
 	>>>生成 *.efi 的路径：
-	D:\UEFI\EDK2-18916\Build\MdeModule\DEBUG_VS2013x86\X64\zhqBaseCode.efi
+		D:\UEFI\EDK2-18916\Build\MdeModule\DEBUG_VS2013x86\X64\zhqBaseCode.efi
+	
+	> build -p MdeModulePkg\MdeModulePkg.dsc
+	>>> 生成 *.efi 的路径：
+		D:\UEFI\EDK2-18916\Build\MdeModule\DEBUG_VS2013x86\IA32
 3. 调试
 	将 *.efi 拷贝到 Shell U盘，直接运行！
 	> fsX:

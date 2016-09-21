@@ -5,7 +5,6 @@
 //		3. Print 不能打印 TAB
 //		4. Print 不能打印字符型；且定义 float 型报错
 //*********************************************************************
-
 #include <Library\UefiLib.h> //Print()
 
 EFI_STATUS
@@ -20,10 +19,10 @@ UefiMain(
 
   Print(L"int i=0x0F, and print it through different type!\n");
   Print(L"[Type] | [Input]\n");
-  Print(L"c   >>> %c\n", i);
+  Print(L"c   >>> %c\n", i); //%c 没有这种格式
   Print(L"d   >>> %d\n", i);
   Print(L"x   >>> %x\n", i);
-  Print(L"#x  >>> %#x\n", i);
+  Print(L"#x  >>> %#x\n", i); //%#x 没有这种格式
   Print(L"02x >>> %02x\n", i);
   Print(L"2x  >>> %2x\n", i);
   Print(L"08x >>> %08x\n", i);
@@ -32,26 +31,6 @@ UefiMain(
   
   return EFI_SUCCESS;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

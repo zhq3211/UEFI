@@ -1,0 +1,18 @@
+[Defines]
+  INF_VERSION    = 0x00010005       
+  BASE_NAME      = MyVoltageSample
+  FILE_GUID      = 10EF5088-B413-4e06-BC5E-C25F53F251D1
+  MODULE_TYPE    = UEFI_APPLICATION
+  VERSION_STRING = 1.0
+  ENTRY_POINT    = UefiMain
+  
+[Sources]
+  VoltageSample.c
+  
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
