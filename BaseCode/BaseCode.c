@@ -1,5 +1,5 @@
-//************************
-// ×î»ù±¾µÄÒ»¸ö UEFI ÊµÀý
+ï»¿//************************
+// æœ€åŸºæœ¬çš„ä¸€ä¸ª UEFI å®žä¾‹
 //************************
 
 #include <Uefi.h>
@@ -18,8 +18,8 @@ UefiMain (
   Print(L"Are OK?\n");
 
   //ConOut
-  //¶¥¸ñÊä³ö
-  //»»ÐÐºó£¬ÏÂÒ»ÐÐÒÀ¾ÉÊÇ½ô¸úÇ°Ò»ÐÐµÄ×Ö·û×·¼Ó£¡
+  //é¡¶æ ¼è¾“å‡º
+  //æ¢è¡ŒåŽï¼Œä¸‹ä¸€è¡Œä¾æ—§æ˜¯ç´§è·Ÿå‰ä¸€è¡Œçš„å­—ç¬¦è¿½åŠ ï¼
   SystemTable->ConOut->OutputString(SystemTable->ConOut, L"\n");
   SystemTable->ConOut->OutputString(SystemTable->ConOut, L"Hello\n");
   SystemTable->ConOut->OutputString(SystemTable->ConOut, L"world!\n");

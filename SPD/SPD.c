@@ -1,10 +1,10 @@
-//**************************************
+ï»¿//**************************************
 //	Hiwen 2016.04.07 
-//	Í¨¹ı SMBus Protocol ¶ÁÈ¡ SPD ĞÅÏ¢£¡
+//	é€šè¿‡ SMBus Protocol è¯»å– SPD ä¿¡æ¯ï¼
 //	Byte Read SPD data(256bytes)
-//×¢£º£¨½« *.inf Ìí¼Óµ½ MdeModulePkg.dsc£©
-//	1. ·ÂÕæ»·¾³ÏÂ£¬ÔËĞĞ´Ë *.efi »á¿¨×¡£¡
-//	2. ĞèÒªÔÚ Shell UÅÌÏÂÖ´ĞĞ£¡£¡£¡
+//æ³¨ï¼šï¼ˆå°† *.inf æ·»åŠ åˆ° MdeModulePkg.dscï¼‰
+//	1. ä»¿çœŸç¯å¢ƒä¸‹ï¼Œè¿è¡Œæ­¤ *.efi ä¼šå¡ä½ï¼
+//	2. éœ€è¦åœ¨ Shell Uç›˜ä¸‹æ‰§è¡Œï¼ï¼ï¼
 //**************************************
 
 #include <Uefi.h>
@@ -12,9 +12,9 @@
 #include <Library/UefiApplicationEntryPoint.h>
 #include <Library\IoLib.h>		//IoWrite8() & IoRead8()
 
-// ºê¶¨Òå
-// SMBus Base Address ĞèÒª°´ÕÕÊµ¼ÊµÄÄÏÇÅEDS Spec.
-// SPD slave Address ĞèÒª²Î¿¼ WH µÄµçÂ·Éè¼Æ.
+// å®å®šä¹‰
+// SMBus Base Address éœ€è¦æŒ‰ç…§å®é™…çš„å—æ¡¥EDS Spec.
+// SPD slave Address éœ€è¦å‚è€ƒ WH çš„ç”µè·¯è®¾è®¡.
 #define	SMB_BASE	0xF040	//PCI - B00D31F03 0ffset = 20h-23h
 #define	SPD_Address	0xA0
 
