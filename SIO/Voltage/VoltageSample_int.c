@@ -8,7 +8,7 @@
 //		4. 计算 VIN0 电压: ReadVIN0*Foctor
 //		5. 推算 HW 待测点的电压: V待测 = ReadVIN0*Foctor*(Ra +Rb)/Rb (mV)
 //	注：
-//		1. 定义无符号类型：UINT8，UINT16
+//		1. 定义[有]符号类型：int
 //		2. 某些值，是直接由 RW 读取后代入程序。
 //***********************************************************************************************************
 #include <Uefi.h>
@@ -23,14 +23,10 @@ UefiMain(
 	IN EFI_SYSTEM_TABLE	*SystemTable
 	)
 {
-  UINT8 ReadVIN0; //IT8617E VIN0 Pin
-  UINT8 Foctor = 11;
-  UINT16 Ra = 6650; //6.65千欧姆
-  UINT16 Rb = 10000; //10千欧姆
-  
-  Print(L"===================================================\n");
-  Print(L"=== IT8617E's Hardware Monitor Sample - Voltage ===\n");
-  Print(L"===================================================\n");
+  int ReadVIN0; //IT8617E VIN0 Pin
+  int Foctor = 11;
+  int Ra = 6650; //6.65千欧姆
+  int Rb = 10000; //10千欧姆
   
   //进入 IT8617E
   _outp(0x2E,0x87);
@@ -45,7 +41,7 @@ UefiMain(
   
   //读取 VIN0 值(Index=20h)
   _outp(0x0A35,	0x20);
-  ReadVIN0 = (UINT8)_inp(0x0A36); //不&0xFF, 值为0xFFFFFFE0
+  ReadVIN0 = _inp(0x0A36)&0xFF; //不&0xFF, 值为0xFFFFFFE0
   
   //打印 VIN0读取值；VIN0电压值；HW待测点电压值
   Print(L"VIN0 Voltage Reading Register: 0x%02x\n", ReadVIN0); //0xE0 or 0xE1

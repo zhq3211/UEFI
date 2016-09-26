@@ -15,20 +15,26 @@ UefiMain(
 	)
 {
   int i = 0x0F;
+  int j = 0xFF;
+  INT8 k = 0xFF;
+  UINT8 r = 0xFF;
   //float f = 0.1; //Error
 
   Print(L"int i=0x0F, and print it through different type!\n");
-  Print(L"[Type] | [Input]\n");
-  Print(L"c   >>> %c\n", i); //%c 没有这种格式
-  Print(L"d   >>> %d\n", i);
-  Print(L"x   >>> %x\n", i);
-  Print(L"#x  >>> %#x\n", i); //%#x 没有这种格式
-  Print(L"02x >>> %02x\n", i);
-  Print(L"2x  >>> %2x\n", i);
-  Print(L"08x >>> %08x\n", i);
-  Print(L"8x  >>> %8x\n", i);
+  Print(L"[Type]      |     [Input]\n");
+  Print(L"int i = 0x0F; c   >>> %c\n", i); //%c 没有这种格式
+  Print(L"int i = 0x0F; d   >>> %d\n", i);
+  Print(L"int i = 0x0F; x   >>> %x\n", i);
+  Print(L"int i = 0x0F; #x  >>> %#x\n", i); //%#x 没有这种格式
+  Print(L"int i = 0x0F; 02x >>> %02x\n", i);
+  Print(L"int i = 0x0F; 2x  >>> %2x\n", i);
+  Print(L"int i = 0x0F; 08x >>> %08x\n", i);
+  Print(L"int i = 0x0F; 8x  >>> %8x\n", i);
   //Print(L"%c\n", f);
-  
+
+  Print(L"int j = 0xFF;   8x  >>> %8x\n", j); //      FF
+  Print(L"INT8 k = 0xFF;  8x  >>> %8x\n", k); //FFFFFFFF
+  Print(L"UINT8 r = 0xFF; 8x  >>> %8x\n", r); //      FF
   return EFI_SUCCESS;
 }
 

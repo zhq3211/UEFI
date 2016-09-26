@@ -1,0 +1,8 @@
+﻿Project: ROSA/APL-DT
+Platform: APL
+SIO: IT8617E 
+
+=== HWM - 电压 ===
+一、 确认 HW 使用的 VIN#
+二、 IT8617E 中 VIN pin 的读取
+三、 编码
