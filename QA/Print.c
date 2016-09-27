@@ -22,7 +22,7 @@ UefiMain(
 
   Print(L"int i=0x0F, and print it through different type!\n");
   Print(L"[Type]      |     [Input]\n");
-  Print(L"int i = 0x0F; c   >>> %c\n", i); //%c 没有这种格式
+  Print(L"int i = 0x0F; c   >>> %c\n", i); //%c 没有这种格式，无输出！
   Print(L"int i = 0x0F; d   >>> %d\n", i);
   Print(L"int i = 0x0F; x   >>> %x\n", i);
   Print(L"int i = 0x0F; #x  >>> %#x\n", i); //%#x 没有这种格式
