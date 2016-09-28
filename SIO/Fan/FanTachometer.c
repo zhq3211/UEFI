@@ -1,6 +1,6 @@
 ﻿//****************************************************************************
 //	功能： 
-//		检测 SIO [IT8617E] Hardware Monitor 中风扇转速(Fan Tachometer - Fan's RPM)
+//		检测 SIO [IT8617E] Hardware Monitor 中风扇转速(Fan Tachometer - Fan's 【RPM】)
 //	注：[IT8617E] >>> four  FAN  Tachometer  inputs	
 //
 //	平台配置：

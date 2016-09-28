@@ -1,6 +1,6 @@
 ﻿//****************************************************************************
 //	功能： 
-//		控制 SIO [IT8617E] Hardware Monitor 中风扇转速(Fan Control - Fan's PWM)
+//		调节 SIO [IT8617E] Hardware Monitor 中风扇转速(Fan Control - Fan's 【PWM】)
 //	注：[IT8617E] >>>  four sets of advanced FAN Controllers. 
 //
 //	平台配置：
@@ -20,6 +20,7 @@
 //		2. 通过 LDN = 04h, Offset = 60h-61h, 计算 ECAddressPort & ECDataPort
 //		3. 设置 BANK_SEL=0 (IT8617E需求)
 //		4. 调节 PWM
+//		5. 例子：调节FAN2 PWM 为 0xFF, 并不断读取其 RPM，最后 PWM 还原 0x80
 //***************************************************************************
 
 #include <Uefi.h>
@@ -111,7 +112,9 @@ UefiMain(
 	IN EFI_SYSTEM_TABLE	*SystemTable
 	)
 {
-
+  UINT16 ReadFanCounter;
+  int delay; //用于更改 PWM 后，延时一会在读取 FAN RPM
+   
   Print(L"=============================================================\n");
   Print(L"=== IT8617E's Hardware Monitor - Fan Controller =============\n");
   Print(L"=== Please reference the HW, which pin is used? Like FAN2 ===\n");
@@ -126,10 +129,75 @@ UefiMain(
   //IT8617E 需要设置 BANK_SEL=0 才能访问 TMPIN 寄存器
   SetBankSel_0();
   
-  //Fan2 
+  //FAN_CTL2,3,4,5 PWM Control Registers 
+  //FAN_CTL PWM Mode Software/Automatic Operation Selection; 
+  //PWM setting
+  //		  |	Software  |	PWM Index
+  //		  |	Operation |	0-255 steps
+  //----------+-----------+---------------------------------------
+  //FAN_CTL2  | 16h<7>=0  |	6Bh	(=0xFF 全速；0x80 半速；0x00 停止)
+  //FAN_CTL3  |	17h<7>=0  |	73h
+  //FAN_CTL4  |	1Eh<7>=0  |	7Bh
+  //FAN_CTL5  |	1Fh<7>=0  |	A3h
+  Print(L"=== FAN_CTL PWM Mode Software/Automatic Selection: Software ===\n");
+  Print(L"=== PWM Control (0x00-0xFF steps) =============================\n");
   
+  //FAN_CTL2 (如果存在 FAN2，设置其 FAN2 的 PWM 值)
+  //设置为 Software Operation Mode
+  _outp(ECAddressPort, 0x16);
+  _outp(ECDataPort, _inp(ECDataPort) & ~(0x80) );
+  Print(L"FAN_CTL2 PWM Software Mode Selection(16h<7>): 0x%02x\n", (UINT8)_inp(ECDataPort) );
+  //PWM Control 来调节 FAN 转速
+  _outp(ECAddressPort, 0x6B);
+  _outp(ECDataPort, 0xFF);  //0xFF 全速；0x80 半速；0x00 停止(保护机制，不一定停止不转!)
+  Print(L"FAN_CTL2 PWM(0x6B): 0x%02x\n", (UINT8)_inp(ECDataPort) );
   
+  //>>> --- 插曲 --- 读取 FAN2 的 RPM ---
+  //Enable FAN2
+  for( delay = 0xFF; delay>0; delay--){	
+  _outp(ECAddressPort, 0x13);
+  _outp(ECDataPort, _inp(ECDataPort) | 0x20);
+  //计算 FAN2 Counter
+  _outp(ECAddressPort, 0x19);
+  ReadFanCounter = (UINT8)_inp(ECDataPort);
+  _outp(ECAddressPort, 0x0E);
+  ReadFanCounter = (ReadFanCounter<<8) + (UINT8)_inp(ECDataPort);
+  //套用公式，计算 FAN2 RPM. 需要等待一下， 读取的 RPM 才会变化！
+  if (ReadFanCounter==0)
+    Print(L"Can not find the Fan! or the Fan not work, and please check the HW...\n");
+  else
+    Print(L"Current Fan2 RPM = %d (r/min)\n", 1350000/(ReadFanCounter*2));   
+  }//For
+  //最后，设置为半速
+  Print(L"\n--- Set FAN2 PWM 0x80 after 0xFF ---\n");
+  _outp(ECAddressPort, 0x6B);
+  _outp(ECDataPort, 0x80);  //0xFF 全速；0x80 半速；0x00 
+  //<<< --- 插曲 --- 读取 FAN2 的 RPM ---
   
+  //FAN_CTL3 
+  //设置为 Software Operation Mode
+  _outp(ECAddressPort, 0x17);
+  _outp(ECDataPort, _inp(ECDataPort) & ~(0x80) );
+  //PWM Control 来调节 FAN 转速
+  _outp(ECAddressPort, 0x73);
+  _outp(ECDataPort, 0xFF);  //0xFF 全速；0x80 半速；0x00 停止(保护机制，不一定停止不转!)
+  
+  //FAN_CTL4
+  //设置为 Software Operation Mode
+  _outp(ECAddressPort, 0x1E);
+  _outp(ECDataPort, _inp(ECDataPort) & ~(0x80) );
+  //PWM Control 来调节 FAN 转速
+  _outp(ECAddressPort, 0x7B);
+  _outp(ECDataPort, 0xFF);  //0xFF 全速；0x80 半速；0x00 停止(保护机制，不一定停止不转!)
+
+  //FAN_CTL5 
+  //设置为 Software Operation Mode
+  _outp(ECAddressPort, 0x1F);
+  _outp(ECDataPort, _inp(ECDataPort) & ~(0x80) );
+  //PWM Control 来调节 FAN 转速
+  _outp(ECAddressPort, 0xA3);
+  _outp(ECDataPort, 0xFF);  //0xFF 全速；0x80 半速；0x00 停止(保护机制，不一定停止不转!)
+
   //退出 IT8617E
   ExitITESIO();
   
