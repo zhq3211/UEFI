@@ -40,7 +40,7 @@ UefiMain(
   
   //IT8617E 规定需要设置 BANK_SLE=0, 才能读取电压值 
   _outp(0x0A35,	0x06);
-  _outp(0x0A36,	_inp(0x0A36) & 0x09FF);
+  _outp(0x0A36,	_inp(0x0A36) & ~(0x60));
   //Print(L"After set BANK_SLE: 0x%02x\n", _inp(0x0A36));
   
   //读取 VIN0 值(Index=20h)

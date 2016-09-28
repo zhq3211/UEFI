@@ -27,3 +27,4 @@
 	>>>
 	#include "Library\BaseIoLibIntrinsic\BaseIoLibIntrinsicInternal.h" 
 	
+1. shell 下，按 F7 >>> 显示历史输出命令

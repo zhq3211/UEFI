@@ -103,11 +103,13 @@ void GetECInterface(){
 
 //******************************************************
 //BANK_SEL 设置为 BANK 00h
-//ECAddressPort/ECDataPort 的 Index = 06h,bit<6-5>=00h
+//ECAddressPort/ECDataPort 的 Index = 06h,bit<6-5>=00h. 
+//  >>> 清零 0110_0000b： &~(0x60) 
 //******************************************************
 void SetBankSel_0(){
 	_outp(ECAddressPort, 0x06);
-	_outp(ECDataPort, _inp(ECDataPort) & 0x09FF);
+	_outp(ECDataPort, _inp(ECDataPort) & ~(0x60) );
+	Print(L"BANK_SEL (06h): 0x%02x\n", _inp(ECDataPort));
 }
 
 
