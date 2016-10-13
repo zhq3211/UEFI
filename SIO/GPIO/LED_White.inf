@@ -1,0 +1,20 @@
+[Defines]
+  INF_VERSION		=	0x00010005       
+  BASE_NAME			=	MyLED_White 
+  FILE_GUID			=	DE7D15CC-8DC0-431a-8C27-A7F513D9F9C4
+  MODULE_TYPE		=	UEFI_APPLICATION
+  VERSION_STRING	=	1.0
+  ENTRY_POINT		=	UefiMain
+ 
+ 
+[Sources]
+  LED_White.c
+
+  
+[Packages]
+  MdePkg\MdePkg.dec
+
+  
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib

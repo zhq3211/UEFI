@@ -1,0 +1,20 @@
+[Defines]
+  INF_VERSION		=	0x00010005       
+  BASE_NAME			=	MyLED_Yellow 
+  FILE_GUID			=	DA29BBED-6082-44aa-8D12-C199D72A74DE
+  MODULE_TYPE		=	UEFI_APPLICATION
+  VERSION_STRING	=	1.0
+  ENTRY_POINT		=	UefiMain
+ 
+ 
+[Sources]
+  LED_Yellow.c
+
+  
+[Packages]
+  MdePkg\MdePkg.dec
+
+  
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
