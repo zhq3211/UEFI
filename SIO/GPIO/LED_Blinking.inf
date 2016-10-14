@@ -1,0 +1,20 @@
+[Defines]
+  INF_VERSION		=	0x00010005       
+  BASE_NAME			=	MyLED_Blinking 
+  FILE_GUID			=	A094B2E2-EC3B-452b-A170-2EBBD945978D
+  MODULE_TYPE		=	UEFI_APPLICATION
+  VERSION_STRING	=	1.0
+  ENTRY_POINT		=	UefiMain
+ 
+ 
+[Sources]
+  LED_Blinking.c
+
+  
+[Packages]
+  MdePkg\MdePkg.dec
+
+  
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib

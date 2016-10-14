@@ -7,6 +7,11 @@
 6. 调试窗口的调出：两个 or 一个？
 7. 定义类型时，最好优先使用无符号类型：UINT8... 而不是 int,INT8...
 8. Print(L"XXX\n"); 不能输出 TAB，中文？
+9. 延时程序：0xFFFF_FFFF！
+	void Delay(){
+	UINT16 i; //不能 INT16
+	for(i=0xFFFF; i>0; i-- );
+	}
 
 
 
@@ -28,3 +33,5 @@
 	#include "Library\BaseIoLibIntrinsic\BaseIoLibIntrinsicInternal.h" 
 	
 1. shell 下，按 F7 >>> 显示历史输出命令
+
+2. 不修改*.c 和 *.inf, build 是不会重新生成 *.efi 的。
