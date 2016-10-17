@@ -158,7 +158,7 @@ UefiMain (
   UINT16 SimpleIOBaseAddress;
   
   Print(L"=== \"Power Button LED Colour\" Change to White, Please check it! ===\n");
-  Print(L"=== Set IT8617E GP45 & GP41: GPO_H ================================\n");
+  Print(L"=== Set IT8617E GP45(GPO_L) & GP41(GPO_L) =========================\n");
   
   //进入 IT8617E
   EnterITESIO();

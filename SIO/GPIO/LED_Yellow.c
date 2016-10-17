@@ -97,9 +97,9 @@ UINT16 GetBaseAddress(){
 }
 	
 
-//----------------------
-//设置 GP45 为 GPIO; GPO
-//----------------------
+//-----------------------------
+//设置 GP45 为 GPIO; GPO；High
+//----------------------------
 void GP45(UINT16 BaseAddress){
 
 	//选择 LDN=07h
@@ -122,9 +122,9 @@ void GP45(UINT16 BaseAddress){
 	_outp(BaseAddress + 0x03, _inp(BaseAddress+0x03) | 0x20);
 }
 
-//----------------------
-//设置 GP41 为 GPIO; GPO
-//----------------------
+//----------------------------
+//设置 GP41 为 GPIO; GPO; High
+//----------------------------
 void GP41(UINT16 BaseAddress){
 
 	//选择 LDN=07h
@@ -158,7 +158,7 @@ UefiMain (
   UINT16 SimpleIOBaseAddress;
   
   Print(L"=== \"Power Button LED Colour\" Change to Yellow/Amber, Please check it! ===\n");
-  Print(L"=== Set IT8617E GP45 & GP41: GPO_H =======================================\n");
+  Print(L"=== Set IT8617E GP45(GPO_H) & GP41(GPO_H) ================================\n");
   
   //进入 IT8617E
   EnterITESIO();
