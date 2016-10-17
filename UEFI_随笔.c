@@ -9,8 +9,13 @@
 8. Print(L"XXX\n"); 不能输出 TAB，中文？
 9. 延时程序：0xFFFF_FFFF！
 	void Delay(){
-	UINT16 i; //不能 INT16
-	for(i=0xFFFF; i>0; i-- );
+	UINT16 i; //INT16
+		for(i=0x4FFF; i>0; i-- ){
+		//; //无任何语句,则没有延时效果！ Why???
+		//Print(L"%04x ", i); //有延时
+		//Print(L""); //无延时
+		Print(L" "); //有延时(0x3FFF-18s左右; 0x4FFF-22s; 0x8FFF-40s左右)
+		}
 	}
 
 
