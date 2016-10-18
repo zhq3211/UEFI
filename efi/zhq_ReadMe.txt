@@ -1,6 +1,6 @@
 ﻿=== 2016.10.18 制作 UEFI启动盘 ===
 
-1. 制作 U盘 的 EFI/BOOT/bootX64.efi or bootia32.efi
+1. 制作 U盘 的 “EFI/BOOT/bootX64.efi” or “EFI/BOOT/bootia32.efi”
 	cmd 进入 EDK2 目录 
 	> build -a X64 -p DuetPkg\DuetPkgX64.dsc
 	> cd DuetPkg
@@ -78,5 +78,5 @@ D:\UEFI\EDK2-18916\DuetPkg>CreateBootDisk.bat usb H: FAT32 X64 step2
 	ll.efi H:\efi\boot\bootX64.efi /y
 	已复制         1 个文件。
 
-(OK! U盘生成EFI/BOOT/bootX64.efi)
+(OK! U盘生成 “EFI/BOOT/bootX64.efi”)
 
