@@ -1,7 +1,9 @@
 ﻿//****************************************************************************
 //	功能： 
 //		检测 SIO [IT8617E] Hardware Monitor 中风扇转速(Fan Tachometer - Fan's 【RPM】)
-//	注：[IT8617E] >>> four  FAN  Tachometer  inputs	
+//	注：1. [IT8617E] >>> four  FAN  Tachometer  inputs	
+//		2. RPM (Revolutions Per Minutes): 每分钟转速
+//		3. CPU 风扇正常转速：2000-3000转/分钟
 //
 //	平台配置：
 //		Project: ROSA/APL-DT

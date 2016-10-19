@@ -2,6 +2,7 @@
 //	功能： 
 //		调节 SIO [IT8617E] Hardware Monitor 中风扇转速(Fan Control - Fan's 【PWM】)
 //	注：[IT8617E] >>>  four sets of advanced FAN Controllers. 
+//		PWM (Pulse Width Modulation)：脉宽调变 
 //
 //	平台配置：
 //		Project: ROSA/APL-DT
