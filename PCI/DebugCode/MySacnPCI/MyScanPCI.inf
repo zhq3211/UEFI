@@ -1,0 +1,19 @@
+[Defines]
+	INF_VERSION		=	0x00010005
+	BASE_NAME		=	MyScanPCI
+	FILE_GUID		=	56DA894F-610B-3211-0629-9D0842F7E6A3  
+	MODULE_TYPE		=	UEFI_APPLICATION
+	VERSION_STRING	=	1.0
+	ENTRY_POINT		=	MyScanPCIMain
+
+[Sources]
+	MyScanPCI.c
+
+[Packages]
+	MdePkg/MdePkg.dec
+	MdeModulePkg/MdeModulePkg.dec
+	
+[LibraryClasses]
+	UefiApplicationEntryPoint
+	UefiLib
+	PciLib

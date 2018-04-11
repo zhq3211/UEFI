@@ -1,0 +1,19 @@
+[Defines]
+	INF_VERSION		=	0x00010005
+	BASE_NAME		=	MyCommonPCI
+	FILE_GUID		=	43F33ABA-9FF8-46ce-92D1-93C053A32024 
+	MODULE_TYPE		=	UEFI_APPLICATION
+	VERSION_STRING	=	1.0
+	ENTRY_POINT		=	MyCommonPCIMain
+
+[Sources]
+	MyCommonPCI.c
+
+[Packages]
+	MdePkg/MdePkg.dec
+	MdeModulePkg/MdeModulePkg.dec
+	
+[LibraryClasses]
+	UefiApplicationEntryPoint
+	UefiLib
+	PciLib
