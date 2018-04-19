@@ -8,6 +8,8 @@
 	如：
 	D:\WorkSpace\UEFI\edk2\UEFI\BaseCode\BaseCode.c
 	D:\WorkSpace\UEFI\edk2\UEFI\BaseCode\BaseCode.inf
+    注：
+    将 .inf 路径添加到 "edk2\Nt32Pkg.dsc" or "edk2\MdeModulePkg.dsc" 的 [Components] 部分
 
 
 
