@@ -538,21 +538,22 @@
   }
 
 
-  #####################################
-  #                                                                      #
-  # zhq Module: build £®ƒ£ƒ‚ Shell œ¬‘À––£©         #
-  #                                                                      #
-  #####################################
-  # NG
-  #zhq/Shell/Shell.inf 
+  
+  ##################################################
+  #                                                #
+  #         zhq3211 (GitHub UEFI Module)           #
+  #              Ê®°Êãü Shell ‰∏ãËøêË°å                 #
+  # > build¬†-p¬†Nt32Pkg\Nt32Pkg.dsc¬†-a¬†IA32         #
+  # => ÁîüÊàêË∑ØÂæÑ:                                   #
+  # edk2\Build\NT32IA32\DEBUG_VS2013x86\IA32\*.efi #
+  #                                                #
+  #  Ê≥®ÔºöÂ∞Ü.dscÂ≠òÂÇ®Ê†ºÂºèÊîπ‰∏∫‚ÄúUTF-8 without BOM‚Äù     #
+  ##################################################
+  # Test NG
+  #zhq3211/Shell/Shell.inf 
   #D:/GitHub/UEFI/BaseCode/BaseCode.inf
   #D:\GitHub\UEFI\BaseCode\BaseCode.inf
-
-  ############################################
-  #                                                                                    #
-  # zhq GitHub UEFI Module: build £®ƒ£ƒ‚ Shell œ¬‘À––£©   #
-  #                                                                                    #
-  ############################################
+  
   UEFI\BaseCode\BaseCode.inf
   UEFI\HelloWorld\HelloWorld.inf
   UEFI\OutputString\OutputString.inf
@@ -561,6 +562,7 @@
   UEFI\QA\Print.inf
 
 
+  
 ###################################################################################################
 #
 # BuildOptions Section - Define the module specific tool chain flags that should be used as

@@ -224,15 +224,17 @@
 ###################################################################################################
 
 [Components]
-
-  #####################################################
-  #													   #
-  # GitHub - zhq module - build £®Shell U≈Ãœ¬‘À––£©				   #
-  #													   #
-  # > build -p MdeModulePkg\MdeModulePkg.dsc -a X64		   #
-  # …˙≥…*.efi¬∑æ∂£∫Build\MdeModule\DEBUG_VS2013x86\X64\*.efi	   # 
-  #													   #
-  #####################################################
+  
+  ###################################################
+  #                                                 #
+  #         zhq3211 (GitHub UEFI Module)            #
+  #              Shell UÁõò‰∏ãËøêË°å                    #
+  # > build -p MdeModulePkg\MdeModulePkg.dsc -a X64 #
+  # => ÁîüÊàêË∑ØÂæÑ:                                    #
+  # edk2\Build\MdeModule\DEBUG_VS2013x86\X64\*.efi  #
+  #                                                 #
+  #  Ê≥®ÔºöÂ∞Ü.dscÂ≠òÂÇ®Ê†ºÂºèÊîπ‰∏∫‚ÄúUTF-8 without BOM‚Äù      #
+  ###################################################
   UEFI\SPD\MySPD.inf
   UEFI\SPD\MyCommonSPD.inf
   UEFI\SIO\Voltage\VoltageSmaple.inf
@@ -245,10 +247,10 @@
   UEFI\SIO\GPIO\LED_Blinking.inf
   UEFI\PCI\MySMBusPCI.inf
   UEFI\PCI\MyCommonPCI.inf
+  
 
 
-
-
+  
   MdeModulePkg/Application/HelloWorld/HelloWorld.inf
   MdeModulePkg/Application/MemoryProfileInfo/MemoryProfileInfo.inf
 
