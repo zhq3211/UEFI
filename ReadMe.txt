@@ -36,17 +36,17 @@
 
 2. 编译(cmd)
 	> edksetup.bat --nt32
-
-	[X64]
-	> build -p MdeModulePkg\MdeModulePkg.dsc -a X64
-	> build -p MdeModulePkg\MdeModulePkg.dsc -a X64 -m UEFI\BaseCode\BaseCode.inf
-	=> 生成 *.efi 的路径：
-	edk2\Build\MdeModule\DEBUG_VS2013x86\X64\MyBASE.efi
 	
 	[IA32]
 	> build -p MdeModulePkg\MdeModulePkg.dsc
 	=> 生成 *.efi 的路径：
 	edk2\Build\MdeModule\DEBUG_VS2013x86\IA32
+	
+	[X64]
+	> build -p MdeModulePkg\MdeModulePkg.dsc -a X64
+	> build -p MdeModulePkg\MdeModulePkg.dsc -a X64 -m UEFI\BaseCode\BaseCode.inf
+	=> 生成 *.efi 的路径：
+	edk2\Build\MdeModule\DEBUG_VS2013x86\X64\MyBASE.efi
 
 3. 调试
 	将 *.efi 拷贝到 Shell U盘，直接运行！
