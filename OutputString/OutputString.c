@@ -18,7 +18,7 @@ UefiMain(
   
   //UefiBootServicesTableLib.h
   gST->ConOut->OutputString(gST->ConOut, L"This is a gST->ConOut->OutputString() test!\n");
-  gST->ConOut->OutputString(gST->ConOut, L"Welcome to zhuxain world!\n");
+  gST->ConOut->OutputString(gST->ConOut, L"Welcome to zhuxian world!\n");
   
   return EFI_SUCCESS;
 }
